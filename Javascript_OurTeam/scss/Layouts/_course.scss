@@ -1,0 +1,101 @@
+.course {
+   padding-top: $padding-top-course;
+   position:relative;
+
+   .contact-form {
+      // max-width: 500px;
+      background-color: $white-bg;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+
+      @include px-course;
+
+      .form-title {
+         margin-bottom: 50px;
+
+         .title {
+            @include title(2rem);
+            text-transform: capitalize;
+         }
+      }
+
+      form {
+         .contact {
+            .row {
+               i {
+                  position: absolute;
+                  left: 2em;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  font-size: 14px;
+                  color: $primary-color;
+               }
+
+               i.message-icon {
+                  top: 1.2em;
+                  transform: none;
+               }
+
+               input {
+                  @include input-style;
+               }
+
+               select {
+                  cursor: pointer;
+                  @include select-style;
+               }
+
+               textarea {
+                  border-radius: 20px;
+                  @include textarea-style;
+               }
+
+               &.row-3.wrapper-btn {
+                  margin-bottom: 4em;
+
+                  .btn-form {
+                     padding: 0 !important;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+	 .wrapper-bg {
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	 }
+}
+
+@media (min-width: 768px) {
+   .course {
+      .contact {
+         i.user-icon {
+            top: 40% !important;
+         }
+      }
+   }
+}
+
+@media (min-width: 992px) {
+   .course {
+      padding-top: 5em;
+
+      .contact-form {
+         max-width: 365px;
+      }
+   }
+}
+
+@media (min-width: 1200px) {
+   .course {
+      .contact-form {
+         max-width: 400px;
+      }
+   }
+}

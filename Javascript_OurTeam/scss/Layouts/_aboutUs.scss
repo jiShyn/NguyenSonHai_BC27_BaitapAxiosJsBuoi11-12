@@ -1,0 +1,74 @@
+// both small screen & larg screen
+.about-us {
+   width: 100%;
+
+   .title {
+      @include title(3.15rem);
+   }
+}
+
+// only small screen
+@media (max-width: 991px) {
+   .about-us {
+      margin-top: $mt-xs-about-section;
+
+      .content {
+         padding-top: 4em;
+         padding-bottom: 4em;
+
+         .heading-text {
+            @include heading-xs-text(15px);
+            margin-bottom: 0.5em;
+         }
+      }
+   }
+}
+
+//only >= large screen
+@media (min-width: 992px) {
+   .about-us {
+      margin-top: $mt-lg-about-section;
+
+      .content {
+         padding-top: 8em;
+         padding-bottom: 8em;
+
+         .heading-text {
+            @include heading-xs-text(15px);
+            font-size: 16.5px;
+            margin-bottom: 0.5em;
+         }
+
+         .title {
+            font-size: 57px;
+         }
+      }
+
+      .top-bg img {
+         margin-top: -8em;
+      }
+   }
+}
+
+@media (min-width: 992px) and (max-width: 1201px) {
+   .about-us {
+      .content {
+         .title {
+            font-size: 3rem;
+         }
+      }
+      
+      .top-bg img {
+         margin-top: -8em;
+      }
+   }
+}
+
+@media (min-width: 1400px) {
+   .about-us {
+      .top-bg img {
+         margin-top: -14em;
+         width: 100%;
+      }
+   }
+}

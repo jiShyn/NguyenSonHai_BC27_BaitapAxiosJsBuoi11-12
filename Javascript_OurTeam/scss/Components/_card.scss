@@ -1,0 +1,42 @@
+.card {
+   border-color: $light-purple;
+   border-radius: $border-radius;
+   transition: box-shadow 0.3s ease-out;
+   overflow: hidden;
+
+   .wrapper-img {
+		border-radius: $border-radius;
+		overflow: hidden;
+      img {
+         border-radius: $border-radius;
+         transition: all 0.6s ease-in-out;
+
+         &:hover {
+            @include hover-card-img;
+         }
+      }
+   }
+
+   .card-body {
+      @include py-card-body;
+      text-align: center;
+
+      h4.card-country {
+         @include heading-xs-text(0.75rem);
+         margin-bottom: $mb-card-body-item;
+      }
+
+      p.card-name {
+         @include title(1.45rem);
+         margin-bottom: $mb-card-body-item;
+      }
+
+      p.card-text {
+         @include text-style-roboto;
+      }
+   }
+
+   &:hover {
+      @include hover-card;
+   }
+}

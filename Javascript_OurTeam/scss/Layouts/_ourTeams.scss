@@ -1,0 +1,35 @@
+.our-team {
+	position: relative;
+	.our-team-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $light-purple;
+	}
+	.wrapper-content {
+		background-color: $light-purple;
+
+		.row-2 {
+			.card {
+				z-index: 1;
+			}
+		} 
+	}
+
+	.bottom-bg img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	
+}
+
+@media (min-width: 992px) {
+
+}

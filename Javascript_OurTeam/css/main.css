@@ -1,0 +1,889 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input[type=checkbox] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type=checkbox] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #181818;
+}
+
+body {
+  background-color: #fff;
+}
+
+input[type=submit] {
+  outline: none;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: 1;
+  border: none;
+  background: transparent;
+  transition: all 300ms ease;
+  color: #fff;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 3em #b61984 inset;
+}
+
+.form-control:focus {
+  color: inherit;
+  background-color: inherit;
+  border-color: none;
+  outline: 0;
+  box-shadow: unset;
+}
+
+.btn-call {
+  border: 2px solid #b61984 !important;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: transparent;
+  box-shadow: 0 0 0 3em #b61984 inset;
+  line-height: 1;
+  transition: box-shadow 0.3s linear;
+}
+.btn-call a.nav-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  transition: none;
+}
+.btn-call a.nav-link i {
+  color: #fff !important;
+}
+.btn-call:hover {
+  color: #b61984;
+  box-shadow: unset;
+  border: 2px solid #b61984;
+}
+.btn-call:hover a.nav-link, .btn-call:hover a.nav-link i {
+  color: #b61984 !important;
+}
+
+.btn-form {
+  border-radius: 50px;
+  min-width: 150px;
+}
+
+.btn-footer {
+  background-color: #fff;
+  box-shadow: 0 0 0 3em #fff inset !important;
+  color: #181818 !important;
+  height: 4em;
+  border: 1px solid #fff !important;
+  transition: box-shadow 0.3s linear !important;
+}
+.btn-footer:hover {
+  color: #fff !important;
+  box-shadow: unset !important;
+}
+
+.card {
+  border-color: #dcd1f0;
+  border-radius: 14px;
+  transition: box-shadow 0.3s ease-out;
+  overflow: hidden;
+}
+.card .wrapper-img {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.card .wrapper-img img {
+  border-radius: 14px;
+  transition: all 0.6s ease-in-out;
+}
+.card .wrapper-img img:hover {
+  transform: scale3d(1.075, 1.075, 1.075);
+}
+.card .card-body {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.card .card-body h4.card-country {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #b61984;
+  margin-bottom: 0.7em;
+}
+.card .card-body p.card-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #181818;
+  margin-bottom: 0.7em;
+}
+.card .card-body p.card-text {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8em;
+}
+.card:hover {
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  background-color: transparent;
+}
+.header .navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar > .container {
+  justify-content: flex-start;
+}
+.navbar > .container .navbar-toggler {
+  border: initial;
+}
+.navbar > .container .navbar-brand .logo-img {
+  height: 48px;
+}
+.navbar > .container .navbar-collapse .navbar-nav:first-of-type .nav-item.active::after {
+  width: 10px;
+  height: 10px;
+  z-index: 9999;
+}
+.navbar > .container .navbar-collapse .navbar-nav:first-of-type .nav-link {
+  line-height: 80px;
+}
+.navbar > .container .navbar-collapse .nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #181818;
+}
+.navbar > .container .navbar-collapse .nav-link:hover {
+  color: #b61984 !important;
+}
+.navbar > .container .navbar-collapse .navbar-nav.social-list {
+  margin-left: 50px;
+}
+.navbar > .container .nav-item.social-item:hover .nav-link i {
+  color: #b61984 !important;
+}
+
+.dropdown-toggle::after {
+  content: unset;
+}
+
+@media (max-width: 991px) {
+  .header {
+    height: auto;
+    box-shadow: 0 1px 7px rgba(57, 63, 72, 0.1);
+  }
+  .header .navbar {
+    background-color: #fff;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .nav-item.dropdown {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .nav-item.dropdown .nav-link.dropdown-toggle {
+    font-weight: 400;
+  }
+
+  .navbar > .container .navbar-collapse .navbar-nav:first-of-type .nav-link {
+    line-height: 1.2;
+    position: relative;
+  }
+  .navbar > .container .navbar-collapse .navbar-nav:first-of-type .nav-link i {
+    position: absolute;
+    right: 0;
+  }
+
+  .nav-item.active a.nav-link.active {
+    font-weight: 600;
+  }
+
+  .social-list {
+    margin-top: 26px;
+    margin-bottom: 26px;
+  }
+
+  .navbar > .container .navbar-collapse .navbar-nav.social-list {
+    margin-left: 0;
+  }
+
+  .nav-item.social-item-mobi .nav-link {
+    display: block;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .nav-item.social-item-mobi .nav-link:hover i {
+    color: #b61984 !important;
+  }
+
+  .nav-link.dropdown-toggle:focus ~ .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-link.dropdown-toggle:focus i {
+    color: #b61984 !important;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu-1 .col-lg-4 > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu-1 .col-lg-4 > a:hover {
+    color: #b61984 !important;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu-4 .col-lg-4 > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu-4 .col-lg-4 > a:hover {
+    color: #b61984 !important;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu li a.dropdown-item {
+    background-color: transparent;
+  }
+  .nav-link.dropdown-toggle ~ .dropdown-menu li a.dropdown-item:hover {
+    color: #b61984 !important;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    height: auto;
+  }
+  .header .navbar {
+    height: 98px;
+  }
+
+  .top-corner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 168px;
+    background-image: url(../../img/yellow_top_wave_01.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .navbar > .container .navbar-brand .logo-img {
+    height: auto;
+    width: 80px;
+  }
+
+  .dropdown .dropdown-menu,
+.dropdown .dropdown-sub-menu {
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    font-size: 12px;
+  }
+  .dropdown::after {
+    content: " ";
+    background-color: #b61984;
+    position: absolute;
+    z-index: 5;
+    bottom: -4px;
+    margin-left: -4px;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    transition: all 0.135s ease-in;
+  }
+  .dropdown:hover .dropdown-menu,
+.dropdown:hover .dropdown-sub-menu {
+    display: block;
+  }
+  .dropdown:hover::after {
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+  }
+
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+    top: 100%;
+    left: 0;
+    max-width: 780px;
+    min-width: 220px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu a {
+    text-decoration: none;
+    color: #181818;
+    font-weight: 600;
+    padding: 12px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu a:hover {
+    color: #b61984 !important;
+    background-color: transparent;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu .col-lg-4 > a {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #b61984;
+    line-height: 1.7;
+    padding-bottom: 6px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 {
+    width: 680px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 .dropdown-sub-menu li:nth-child(1) a.dropdown-item {
+    border-bottom: 0.5px solid rgba(171, 184, 195, 0.3);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 .dropdown-sub-menu li:nth-child(2) a.dropdown-item {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.5);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 .dropdown-sub-menu li:nth-child(3) a.dropdown-item {
+    border-bottom: 1.1px solid rgba(171, 184, 195, 0.7);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-2, .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-3 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-2 li a, .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-3 li a {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.5);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-2 li:nth-last-child(1) a, .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-3 li:nth-last-child(1) a {
+    border-bottom: unset;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-3 {
+    left: initial;
+    right: -70%;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-3 a.dropdown-item {
+    text-align: right;
+    padding-right: 0;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 {
+    width: 780px;
+    transform: translateX(-44%);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 a {
+    text-align: right;
+    padding-right: 0;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 .dropdown-sub-menu li:nth-child(1) a.dropdown-item {
+    border-bottom: 0.5px solid rgba(171, 184, 195, 0.3);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 .dropdown-sub-menu li:nth-child(2) a.dropdown-item {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.5);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 .dropdown-sub-menu li:nth-child(3) a.dropdown-item {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.7);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 .dropdown-sub-menu li:nth-child(4) a.dropdown-item {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.7);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-4 .dropdown-sub-menu li:nth-child(5) a.dropdown-item {
+    border-bottom: 0.8px solid rgba(171, 184, 195, 0.7);
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 {
+    transform: translateX(1%);
+  }
+}
+@media (min-width: 1201px) {
+  .navbar-expand-lg .navbar-nav .dropdown-menu.dropdown-menu-1 {
+    transform: translateX(-40%);
+  }
+}
+.about-us {
+  width: 100%;
+}
+.about-us .title {
+  font-size: 3.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #181818;
+}
+
+@media (max-width: 991px) {
+  .about-us {
+    margin-top: 66px;
+  }
+  .about-us .content {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .about-us .content .heading-text {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #b61984;
+    margin-bottom: 0.5em;
+  }
+}
+@media (min-width: 992px) {
+  .about-us {
+    margin-top: 98px;
+  }
+  .about-us .content {
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+  .about-us .content .heading-text {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #b61984;
+    font-size: 16.5px;
+    margin-bottom: 0.5em;
+  }
+  .about-us .content .title {
+    font-size: 57px;
+  }
+  .about-us .top-bg img {
+    margin-top: -8em;
+  }
+}
+@media (min-width: 992px) and (max-width: 1201px) {
+  .about-us .content .title {
+    font-size: 3rem;
+  }
+  .about-us .top-bg img {
+    margin-top: -8em;
+  }
+}
+@media (min-width: 1400px) {
+  .about-us .top-bg img {
+    margin-top: -14em;
+    width: 100%;
+  }
+}
+.our-team {
+  position: relative;
+}
+.our-team .our-team-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dcd1f0;
+}
+.our-team .wrapper-content {
+  background-color: #dcd1f0;
+}
+.our-team .wrapper-content .row-2 .card {
+  z-index: 1;
+}
+.our-team .bottom-bg img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.course {
+  padding-top: 4em;
+  position: relative;
+}
+.course .contact-form {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.course .contact-form .form-title {
+  margin-bottom: 50px;
+}
+.course .contact-form .form-title .title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #181818;
+  text-transform: capitalize;
+}
+.course .contact-form form .contact .row i {
+  position: absolute;
+  left: 2em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #b61984;
+}
+.course .contact-form form .contact .row i.message-icon {
+  top: 1.2em;
+  transform: none;
+}
+.course .contact-form form .contact .row input {
+  padding: 1em 1em 1em 3.5em !important;
+  font-size: 0.8em !important;
+  height: 3.4em;
+  font-size: "Roboto", Arial, Helvetica, sans-serif;
+}
+.course .contact-form form .contact .row select {
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0 0 0 3.5em;
+  height: 3.4em;
+  color: #6c757d;
+}
+.course .contact-form form .contact .row textarea {
+  border-radius: 20px;
+  padding: 1em 1em 1em 3.5em !important;
+  height: 90px;
+  line-height: 1.5;
+  font-size: 0.8em !important;
+  font-size: "Roboto", Arial, Helvetica, sans-serif;
+}
+.course .contact-form form .contact .row.row-3.wrapper-btn {
+  margin-bottom: 4em;
+}
+.course .contact-form form .contact .row.row-3.wrapper-btn .btn-form {
+  padding: 0 !important;
+}
+.course .wrapper-bg {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .course .contact i.user-icon {
+    top: 40% !important;
+  }
+}
+@media (min-width: 992px) {
+  .course {
+    padding-top: 5em;
+  }
+  .course .contact-form {
+    max-width: 365px;
+  }
+}
+@media (min-width: 1200px) {
+  .course .contact-form {
+    max-width: 400px;
+  }
+}
+.footer {
+  background-color: #b61984;
+  padding-top: 8em;
+  padding-bottom: 8em;
+  background-image: url(../../img/footer_background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer div.item {
+  margin-bottom: 5em;
+}
+.footer div.item .headline {
+  display: block;
+  color: #fff;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+.footer div.item .list li.item {
+  margin-bottom: 0.2em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer div.item .list li.item i {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-right: 1em;
+}
+.footer div.item .list li.item span.item-desc {
+  color: #fff;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+.footer div.item .list li.item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+.footer div.item .list li.item.social-item {
+  margin-top: 1em;
+  border-bottom: unset;
+}
+.footer div.item:nth-last-child(1) form input[type=text] {
+  background-color: #b61984;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.7em;
+  transition: all 500ms ease;
+}
+.footer div.item:nth-last-child(1) form input[type=text]:focus {
+  border-color: #fff;
+}
+.footer div.item:nth-last-child(1) form input[type=text]::-moz-placeholder {
+  color: #fff;
+}
+.footer div.item:nth-last-child(1) form input[type=text]:-ms-input-placeholder {
+  color: #fff;
+}
+.footer div.item:nth-last-child(1) form input[type=text]::placeholder {
+  color: #fff;
+}/*# sourceMappingURL=main.css.map */

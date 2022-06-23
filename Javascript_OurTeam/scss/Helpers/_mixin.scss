@@ -1,0 +1,116 @@
+@mixin style--nav-item {
+   font-size: $header-font-size;
+   font-weight: $header-font-weight-bold;
+   color: $text-color;
+}
+
+@mixin hover-btn-primary {
+   color: $primary-color;
+   box-shadow: unset;
+   border: 2px solid $border-primary-color;
+}
+@mixin hover-btn-footer {
+   color: $white-text !important;
+   box-shadow: unset !important;
+}
+
+@mixin hover-text {
+   color: $primary-color !important;
+}
+
+@mixin border-bottom-color($width, $alpha) {
+   border-bottom: $width solid rgba($border-bottom-color, $alpha);
+}
+@mixin padding-x-24 {
+   padding-left: 24px;
+   padding-right: 24px;
+}
+
+@mixin text-right {
+   text-align: right;
+}
+
+@mixin px-small {
+   padding-left: $spacing-small;
+   padding-right: $spacing-small;
+}
+
+@mixin heading-xs-text($font-size) {
+   text-transform: uppercase;
+   font-size: $font-size;
+   font-weight: $weight-bold;
+   line-height: 1.2;
+   color: $primary-color;
+}
+
+@mixin title($font-size) {
+   font-size: $font-size;
+   font-weight: $weight-bold-2;
+   line-height: 1.2;
+   color: $text-color;
+}
+
+@mixin py-card-body {
+   padding-top: 2em;
+   padding-bottom: 2em;
+}
+
+@mixin text-style-roboto {
+   font-family: "Jost", sans-serif;
+   font-size: 14px;
+   font-weight: $font-weight-light;
+   line-height: 1.8em;
+}
+
+@mixin hover-card {
+   box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+}
+
+@mixin hover-card-img {
+   transform: scale3d(1.075, 1.075, 1.075);
+}
+
+@mixin px-course {
+   padding-left: 25px;
+   padding-right: 25px;
+}
+
+@mixin input-style {
+   padding: 1em 1em 1em 3.5em !important;
+   font-size: 0.8em !important;
+   height: 3.4em;
+   font-size: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+@mixin select-style {
+   font-size: 0.8em;
+   padding: 0 0 0 3.5em;
+	 height: 3.4em;
+	 color: #6c757d;
+}
+
+@mixin textarea-style {
+   padding: 1em 1em 1em 3.5em !important;
+   height: 90px;
+   line-height: 1.5;
+   font-size: 0.8em !important;
+   font-size: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+@mixin headline-style-footer {
+   color: $white-text;
+   font-size: 1.55rem;
+   font-weight: $weight-bold-2;
+   line-height: 1.2;
+   text-transform: capitalize;
+   margin-bottom: 1em;
+}
+
+@mixin text-style-footer {
+   color: $white-text;
+   font-size: 0.8em;
+   font-family: "Roboto", sans-serif;
+   font-weight: $font-weight-light;
+   line-height: 1.1;
+   text-transform: capitalize;
+}

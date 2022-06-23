@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Bai tap SCSS</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+
+      <!-- Bootstrap CSS v5.2.0-beta1 -->
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+         crossorigin="anonymous"
+      />
+
+      <!-- google font -->
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+         rel="stylesheet"
+      />
+      <!-- Font Awesome -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+
+      <!-- Animated -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="./css/main.css" />
+   </head>
+   <body>
+      <header class="header fixed-top animate__bounceInDown animate__animated">
+         <nav class="navbar navbar-expand-lg">
+            <div class="container">
+               <button
+                  class="navbar-toggler px-0 me-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+               >
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <a class="navbar-brand" href="#">
+                  <img
+                     src="./img/crest.png"
+                     alt="logo image"
+                     class="logo-img"
+                  />
+               </a>
+               <div
+                  class="collapse navbar-collapse justify-content-end"
+                  id="navbarNavDropdown"
+               >
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown me-lg-4">
+                        <a
+                           class="nav-link dropdown-toggle"
+                           aria-current="page"
+                           href="#"
+                           >Home
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-1">
+                           <div class="container">
+                              <div class="row">
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0">Wavy</a>
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Languages</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Music Courses</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Music School</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Ballet</a
+                                          >
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0">Sunny</a>
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Draw & Paint</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Illustration</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Language</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Acting</a
+                                          >
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0">Shady</a>
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Music</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Contemporary Ballet</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Jazz Ballet</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Acting</a
+                                          >
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+
+                     <li class="nav-item active dropdown me-lg-4">
+                        <a class="nav-link dropdown-toggle active" href="#"
+                           >About
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-2">
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >About Us</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >About Me</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Our Team</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >History</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Testimonials</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Contact</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Coming Soon</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0">404</a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="nav-item dropdown me-lg-4">
+                        <a class="nav-link dropdown-toggle" href="#">
+                           Course
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-2">
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0">
+                                 Courses
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Single Courses</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Schedule</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Workshop</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Workshops & Events</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Get Quote</a
+                              >
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="nav-item dropdown me-lg-4">
+                        <a class="nav-link dropdown-toggle" href="#">
+                           Blog
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-2">
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Standard view</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Columns view</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Simple view</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Grid view
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Single Post</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Galleries</a
+                              >
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="nav-item dropdown me-lg-4">
+                        <a class="nav-link dropdown-toggle" href="#">
+                           Shop
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-3">
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Products</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0">Cart</a>
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >Checkout</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="dropdown-item ps-lg-0"
+                                 >My Account</a
+                              >
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#">
+                           Elements
+                           <i class="fa-solid fa-chevron-down d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-4">
+                           <div class="dropdown-sub-menu container">
+                              <div class="row gx-lg-5">
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0">Base</a>
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Headlines</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Buttons & Icons</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Images</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Organic Animation</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Inner Row & Column</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Countdown & Counter</a
+                                          >
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0">Common</a>
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Price List & Progress Bar</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Google Maps</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Service</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Accordions & Tabs
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Card & Event
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Schedule & Step line
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="col-lg-4">
+                                    <a href="#" class="ps-lg-0"
+                                       >Presentational</a
+                                    >
+                                    <ul
+                                       class="dropdown-sub-menu d-none d-lg-block"
+                                    >
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Team</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Slider</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Testimonials</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Cost Calculator</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Social Media</a
+                                          >
+                                       </li>
+                                       <li>
+                                          <a
+                                             href="#"
+                                             class="dropdown-item ps-lg-0"
+                                             >Blog Layouts</a
+                                          >
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+                  <ul class="social-list navbar-nav align-items-center">
+                     <li class="nav-item tel me-lg-3">
+                        <button
+                           class="btn-call border px-4 px-lg-3 rounded-pill"
+                        >
+                           <a href="tel: (+1) 555 234-8765" class="nav-link">
+                              <i class="fa-solid fa-phone-flip"></i>
+                              (+1) 555 234-8765</a
+                           >
+                        </button>
+                     </li>
+
+                     <li class="nav-item social-item-mobi d-flex d-lg-none">
+                        <a href="" class="nav-link me-3">
+                           <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="" class="nav-link me-3">
+                           <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="" class="nav-link me-3">
+                           <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="" class="nav-link">
+                           <i class="fa-brands fa-instagram"></i>
+                        </a>
+                     </li>
+
+                     <li class="nav-item social-item d-none d-lg-block">
+                        <a href="" class="nav-link">
+                           <i class="fa-brands fa-twitter"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item social-item d-none d-lg-block">
+                        <a href="" class="nav-link">
+                           <i class="fa-brands fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item social-item d-none d-lg-block">
+                        <a href="" class="nav-link">
+                           <i class="fa-brands fa-youtube"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item social-item d-none d-lg-block">
+                        <a href="" class="nav-link">
+                           <i class="fa-brands fa-instagram"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+      <div class="top-corner-bg"></div>
+
+      <main>
+         <section class="about-us">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12 col-lg-6">
+                     <div
+                        class="content animate__animated animate__bounceInLeft wow"
+                     >
+                        <h1 class="heading-text">about us</h1>
+                        <span class="title">The language teaching experts</span>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <img
+                        src="./img/hero_team.png"
+                        alt="hero team image"
+                        class="img-fluid d-block animate__animated animate__bounceIn wow"
+                     />
+                  </div>
+               </div>
+            </div>
+
+            <div class="wrapper top-bg">
+               <img
+                  src="./img/Violet_top_left_wave.png"
+                  alt=""
+                  class="img-fluid d-block"
+               />
+            </div>
+         </section>
+
+         <section class="our-team">
+            <div class="our-team-bg"></div>
+            <div class="container px-0">
+               <div
+                  class="wrapper-content container-fluid pt-4 px-our-team-custom"
+               >
+                  <div class="row mb-5 mb-sm-4 mb-lg-5">
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_1.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">italian</h4>
+                              <p class="card-name">July Roberts</p>
+                              <p class="card-text">
+                                 Lorem ipsum dolor sit amet, consectetuer
+                                 adipiscing elit.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_2.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">french</h4>
+                              <p class="card-name">Jon Stone</p>
+                              <p class="card-text">
+                                 Nanotechnology immersion along the information.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_3.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">japanese</h4>
+                              <p class="card-name">Emma Stone</p>
+                              <p class="card-text">
+                                 Bring to the table win-win survival strategies
+                                 to ensure.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_4.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">chinese</h4>
+                              <p class="card-name">Mark Lee</p>
+                              <p class="card-text">
+                                 Proactive domination. At the end of the day,
+                                 going forward.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row row-2">
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_5.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">russian</h4>
+                              <p class="card-name">John Doe</p>
+                              <p class="card-text">
+                                 A new normal that has evolved from generation
+                                 X.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_6.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">sweden</h4>
+                              <p class="card-name">Jane Smith</p>
+                              <p class="card-text">
+                                 Heading towards a streamlined cloud solution.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_7.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">spanish</h4>
+                              <p class="card-name">Hanna Alverez</p>
+                              <p class="card-text">
+                                 Content in real-time will have multiple
+                                 touchpoints.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-6 col-lg-3">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+                              <img
+                                 src="./img/teacher_8.jpg"
+                                 alt=""
+                                 class="img-fluid d-block"
+                              />
+                           </div>
+                           <div class="card-body">
+                              <h4 class="card-country">italian</h4>
+                              <p class="card-name">July Roberts</p>
+                              <p class="card-text">
+                                 Capitalize on low hanging fruit to identify a
+                                 ballpark.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- <div class="card">
+   <img src="./img/teacher_3.jpg" alt="" class="img-fluid d-block">
+   <div class="card-body">
+      <h4 class="card-country">Title</h4>
+      <p class="card-name">Text</p>
+      <p class="card-text">A new normal that has evolved from generation X.</p>
+   </div>
+</div> -->
+               </div>
+
+               <div class="wrapper bottom-bg">
+                  <img
+                     src="./img/Wave_White_bottom_right_shape_01.png"
+                     alt=""
+                     class="img-fluid d-block"
+                  />
+               </div>
+            </div>
+         </section>
+
+         <section class="course">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                     <div class="wrapper-img">
+                        <img
+                           src="./img/conatct_inner.png"
+                           alt=""
+                           class="img-fluid d-block animate__bounceInLeft animate__animated wow"
+                        />
+                     </div>
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+                     <div
+                        class="contact-form mx-md-auto animate__bounceInRight animate__animated wow"
+                     >
+                        <div class="form-title">
+                           <span class="title">find your course</span>
+                        </div>
+                        <form action="">
+                           <div class="contact">
+                              <div class="row row-1">
+                                 <div
+                                    class="position-relative col-12 col-md-6 mb-3 mb-md-0"
+                                 >
+                                    <i class="fa-solid fa-user user-icon"></i>
+                                    <input
+                                       class="form-control rounded-pill"
+                                       type="text"
+                                       placeholder="Name"
+                                    />
+                                 </div>
+
+                                 <div
+                                    class="position-relative col-12 col-md-6 mb-3"
+                                 >
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input
+                                       class="form-control rounded-pill"
+                                       type="text"
+                                       placeholder="Email"
+                                    />
+                                 </div>
+                              </div>
+
+                              <div class="row row-2">
+                                 <div class="position-relative col-12 mb-3">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <select class="form-select rounded-pill">
+                                       <option value="">English</option>
+                                       <option value="">French</option>
+                                       <option value="">Spanish</option>
+                                       <option value="">German</option>
+                                    </select>
+                                 </div>
+
+                                 <div class="position-relative col-12 mb-5">
+                                    <i
+                                       class="fa-solid fa-message message-icon"
+                                    ></i>
+                                    <textarea
+                                       class="form-control"
+                                       placeholder="Message"
+                                    ></textarea>
+                                 </div>
+                              </div>
+
+                              <div class="wrapper-btn row row-3">
+                                 <div class="col-12 col-md-auto">
+                                    <input
+                                       type="submit"
+                                       value="SEND"
+                                       class="btn-call btn-form"
+                                    />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="wrapper-bg">
+               <img
+                  src="./img/accent_bottom_wave_01.png"
+                  alt=""
+                  class="img-fluid w-100 d-block"
+               />
+            </div>
+         </section>
+      </main>
+
+      <footer class="footer animate__zoomInUp animate__animated wow">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6 col-lg-3">
+                  <div class="item">
+                     <span class="headline">contact us</span>
+                     <ul class="list">
+                        <li class="item">
+                           <i class="fa-solid fa-location-dot"></i>
+                           <span class="item-desc">
+                              Franklin St, Greenpoint Ave</span
+                           >
+                        </li>
+                        <li class="item">
+                           <i class="fa-solid fa-phone"></i>
+                           <a href="tel: +2342 5446 67" class="item-desc"
+                              >+2342 5446 67</a
+                           >
+                        </li>
+                        <li class="item">
+                           <i class="fa-solid fa-clock"></i>
+                           <span class="item-desc">
+                              Monday - Friday: 8 AM - 5 PM</span
+                           >
+                        </li>
+
+                        <li class="item social-item">
+                           <a href="" class="social-link me-1">
+                              <i class="fa-brands fa-twitter"></i>
+                           </a>
+                           <a href="" class="social-link me-1">
+                              <i class="fa-brands fa-facebook"></i>
+                           </a>
+                           <a href="" class="social-link me-1">
+                              <i class="fa-brands fa-youtube"></i>
+                           </a>
+                           <a href="" class="social-link me-1">
+                              <i class="fa-brands fa-instagram"></i>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-sm-6 col-lg-3">
+                  <div class="item">
+                     <span class="headline">quick links</span>
+                     <ul class="list">
+                        <li class="item">
+                           <a href="#" class="item-desc">home</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc">courses</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc"> schedule</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc"> blog</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-lg-3">
+                  <div class="item">
+                     <span class="headline">about</span>
+                     <ul class="list">
+                        <li class="item">
+                           <a href="#" class="item-desc">About Us</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc">Events</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc"> Get Quote</a>
+                        </li>
+                        <li class="item">
+                           <a href="#" class="item-desc"> Contact</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-sm-6 col-lg-3">
+                  <div class="item">
+                     <span class="headline mb-5">newletters</span>
+                     <form action="">
+                        <input
+                           type="text"
+                           class="form-control rounded-pill text-center mb-5 mb-sm-2"
+                           placeholder="Your email"
+                        />
+                        <input
+                           type="submit"
+                           class="btn-call btn-form btn-footer"
+                           value="SUBSCRIBE"
+                        />
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- <div class="wrapper-bg">
+            <img src="./img/footer_background.jpg" alt="">
+         </div> -->
+      </footer>
+
+      <!-- Bootstrap JavaScript Libraries -->
+      <script
+         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+         crossorigin="anonymous"
+      ></script>
+
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+         crossorigin="anonymous"
+      ></script>
+
+      <!-- link wowjs.uk -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+      <!-- active  wowjs.uk -->
+      <script>
+         new WOW().init();
+      </script>
+
+      <!-- Thư viện Axios -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script src="./models/User.js"></script>
+      <script src="./services/userAPI.js"></script>
+      <script src="./controllers/main.js"></script>
+   </body>
+</html>

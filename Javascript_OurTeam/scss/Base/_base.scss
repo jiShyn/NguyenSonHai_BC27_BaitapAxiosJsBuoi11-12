@@ -1,0 +1,32 @@
+* {
+   font-family: "Montserrat", sans-serif;
+   color: $text-color;
+}
+body {
+   background-color: $white-bg;
+}
+
+input[type="submit"] {
+   outline: none;
+   width: 100%;
+   display: block;
+   cursor: pointer;
+   font-size: 0.8em;
+   letter-spacing: 1px;
+   font-weight: 600;
+   line-height: 1;
+   border: none;
+   background: transparent;
+   transition: all 300ms ease;
+   color: $white-text;
+   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+   box-shadow: 0 0 0 3em $primary-color inset;
+}
+
+.form-control:focus {
+   color: inherit;
+   background-color: inherit;
+   border-color: none;
+   outline: 0;
+   box-shadow: unset;
+}
