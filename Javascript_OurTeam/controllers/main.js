@@ -1,39 +1,46 @@
-main()
+main();
 
 function main() {
-	apiGetUsers().then((result) => {
-		const users = result.data
-		console.log(users);
-		// users.forEach((user) => {
-		// 	user = new User(user.id,
-		// 		user.taiKhoan,
-		// 		user.hoTen,
-		// 		user.matKhau,
-		// 		user.email,
-		// 		user.loaiND,
-		// 		user.ngonNgu,
-		// 		user.moTa,
-		// 		user.hinhAnh,)
-		// })
+   apiGetUsers()
+      .then((result) => {
+         const users = result.data;
 
-		for (var i = 0; i < users.length; i++) {
-			var user = users[i];
-			users[i] = new User(
-				user.id,
-				user.taiKhoan,
-				user.hoTen,
-				user.matKhau,
-				user.email,
-				user.loaiND,
-				user.ngonNgu,
-				user.moTa,
-				user.hinhAnh
-			);
-	}
+         display(users);
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+}
 
-		console.log(users);
-		users.apiGetUsers()
-	})
+// hàm hiền thị động danh sách GV ra giao diện
+function display(users) {
+   let html = "";
+   users.forEach((user) => {
+      if (user.loaiND === "GV") {
+         html += /*html */ `
+			<div class="col-12 col-sm-6 col-lg-3 mb-sm-3 mb-lg-5">
+                        <div
+                           class="card animate__animated animate__bounceInLeft wow"
+                        >
+                           <div class="wrapper-img">
+													 <img
+													 src="${user.hinhAnh}"
+                                 alt=""
+                                 class="img-fluid d-block"
+																 />
+																 </div>
+																 <div class="card-body">
+																 <h4 class="card-country">${user.ngonNgu}</h4>
+																 <p class="card-name">${user.hoTen}</p>
+																 <p class="card-text">
+                                 ${user.moTa}
+																 </p>
+																 </div>
+																 </div>
+																 </div>
+																 `;
+      }
+   });
 
-
+	 document.querySelector('.js-row').innerHTML = html
 }

@@ -11,10 +11,10 @@
    background-color: $primary-color;
    padding-top: $padding-top-footer;
    padding-bottom: $padding-bottom-footer-1;
-	 background-image: url(../../img/footer_background.jpg);
-	 background-position: center center;
-	 background-repeat: no-repeat;
-	 background-size: cover;
+   background-image: url(../../img/footer_background.jpg);
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
 
    div.item {
       margin-bottom: $margin-bottom-2-footer;
@@ -42,11 +42,18 @@
             a {
                text-decoration: none;
                @include text-style-footer;
+               &:hover {
+                  opacity: 0.8;
+               }
             }
 
             &.social-item {
                margin-top: $margin-top-1-footer;
-							 border-bottom: unset;
+               border-bottom: unset;
+
+               a.social-link:hover i {
+                  color: #000;
+               }
             }
          }
       }

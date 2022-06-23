@@ -865,9 +865,15 @@ input[type=submit] {
   line-height: 1.1;
   text-transform: capitalize;
 }
+.footer div.item .list li.item a:hover {
+  opacity: 0.8;
+}
 .footer div.item .list li.item.social-item {
   margin-top: 1em;
   border-bottom: unset;
+}
+.footer div.item .list li.item.social-item a.social-link:hover i {
+  color: #000;
 }
 .footer div.item:nth-last-child(1) form input[type=text] {
   background-color: #b61984;
