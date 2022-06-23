@@ -1,6 +1,12 @@
 const baseURL = "https://6299dac16f8c03a9784b5a5e.mockapi.io/api/Users"
 
 //hàm call API lấy danh sách người dùng
+function apiGetUsers() {
+	return axios({
+		url: baseURL,
+		method: "GET",
+	})
+}
 
 //hàm call API thêm người dùng
 
