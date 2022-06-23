@@ -1,4 +1,3 @@
-const managerUser = new ManagerUser();
 
 main();
 
@@ -6,10 +5,10 @@ main();
 function main() {
    apiGetUsers()
       .then((result) => {
-         let users = result.data;
+         const users = result.data;
 
          //duyệt mảng với mỗi user ta tạo thành 1 đối tượng mới để có method (data ở API ko có method)
-         users.forEach((user) => {
+         users.map((user) => {
             user = new User(
                user.id,
                user.taiKhoan,
@@ -21,13 +20,8 @@ function main() {
                user.moTa,
                user.hinhAnh
             );
-						managerUser.addUser(user)
+            return users;
          });
-
-				 users = managerUser.users
-
-				 console.log("users: ", managerUser.users);
-				 console.log("managerUser: ", managerUser);
 
          //sau khi có danh sách users ta gọi hàm display()
          display(users);
@@ -65,52 +59,63 @@ function display(users) {
    document.getElementById("tblDanhSachNguoiDung").innerHTML = html;
 }
 
-// Hàm add User
-// document
-//    .getElementById("btnThemNguoiDung")
-//    .addEventListener("click", (event) => {
-//       document.querySelector(".modal-title").innerHTML = "THÊM NGƯỜI DÙNG";
-//       document.querySelector(".modal-footer").innerHTML = `
-// 		<button class="btn btn-success" data-type='add'>Thêm</button>
-// 		<button class="btn btn-warning" data-dismiss="modal">Đóng</button>
-// 	`;
+// lắng nghe sự kiện click ở nút Thêm mới
+document
+   .getElementById("btnThemNguoiDung")
+   .addEventListener("click", (event) => {
+      document.querySelector(".modal-title").innerHTML = "THÊM NGƯỜI DÙNG";
+      document.querySelector(".modal-footer").innerHTML = `
+		<button class="btn btn-success" data-type='add'>Thêm</button>
+		<button class="btn btn-warning" data-dismiss="modal">Đóng</button>
+	`;
+   });
 
-//       const taiKhoan = document.getElementById("TaiKhoan").value;
-//       const hoTen = document.getElementById("HoTen").value;
-//       const matKhau = document.getElementById("MatKhau").value;
-//       const email = document.getElementById("Email").value;
-//       const hinhAnh = document.getElementById("HinhAnh").value;
-//       const loaiND = document.getElementById("loaiNguoiDung").value;
-//       const ngonNgu = document.getElementById("loaiNgonNgu").value;
-//       const moTa = document.getElementById("MoTa").value;
+// Lắng nghe sự kiện click trong modal-footer
+document.querySelector(".modal-footer").addEventListener("click", (event) => {
+   const type = event.target.getAttribute("data-type");
 
-//       const user = new User(
-//          null,
-//          taiKhoan,
-//          hoTen,
-//          matKhau,
-//          email,
-//          loaiND,
-//          ngonNgu,
-//          moTa,
-//          hinhAnh
-//       );
+   const taiKhoan = document.getElementById("TaiKhoan").value;
+   const hoTen = document.getElementById("HoTen").value;
+   const matKhau = document.getElementById("MatKhau").value;
+   const email = document.getElementById("Email").value;
+   const hinhAnh = document.getElementById("HinhAnh").value;
+   const loaiND = document.getElementById("loaiNguoiDung").value;
+   const ngonNgu = document.getElementById("loaiNgonNgu").value;
+   const moTa = document.getElementById("MoTa").value;
 
-//       // Hàm add User
-//       document
-//          .querySelector(".modal-footer")
-//          .addEventListener("click", (event) => {
-//             const type = event.target.getAttribute("data-type");
+   const user = new User(
+      null,
+      taiKhoan,
+      hoTen,
+      matKhau,
+      email,
+      loaiND,
+      ngonNgu,
+      moTa,
+      hinhAnh
+   );
 
-//             switch (type) {
-//                case "add":
-//                   console.log("Users from ManagerUser: ", managerUser);
-//                   managerUser.addUser(user);
+   switch (type) {
+      case "add": {
+         addUser(user);
+         break;
+      }
 
-//                   break;
+			case "update": {
+				updateUserAPI(userID);
+				break;
+			}
+   }
+});
 
-//                default:
-//                   break;
-//             }
-//          });
-//    });
+
+//hàm add user vào API
+function addUser(user) {
+   apiAddUser(user)
+      .then(() => {
+         main();
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+}
