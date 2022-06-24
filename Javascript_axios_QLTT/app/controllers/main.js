@@ -1,4 +1,3 @@
-
 main();
 
 //hàm main tự động chạy để render ra giao diện data từ API
@@ -45,7 +44,7 @@ function display(users) {
 			<td>${user.ngonNgu}</td>
 			<td>${user.loaiND}</td>
 			<td>
-				<button class="btn btn-primary" data-type='select' data-id='${
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-type='select' data-id='${
                user.id
             }'>Cập nhật</button>
 				<button class="btn btn-danger" data-type='delete' data-id='${
@@ -70,7 +69,63 @@ document
 	`;
    });
 
-// Lắng nghe sự kiện click trong modal-footer
+// lắng nghe sự kiện ở nút DanhSachNguoiDung/Cập Nhật
+document
+   .getElementById("DanhSachNguoiDung")
+   .addEventListener("click", (event) => {
+      const type = event.target.getAttribute("data-type");
+      const id = event.target.getAttribute("data-id");
+
+      switch (type) {
+         case "select":
+            selectUserWithId(id);
+            break;
+         case "delete":
+            deleteUserWithID(id);
+            break;
+      }
+   });
+
+//hàm select user và open Modal
+function selectUserWithId(userID) {
+   document.querySelector(".modal-title").innerHTML = "CẬP NHẬT NGƯỜI DÙNG";
+   document.querySelector(".modal-footer").innerHTML = `
+   <button class="btn btn-success" data-type='update'>Cập nhật</button>
+   <button class="btn btn-warning" data-dismiss="modal">Đóng</button>
+`;
+
+   apiGetUser(userID)
+      .then((result) => {
+         const selectedUser = result.data;
+
+         document.getElementById("TaiKhoan").value = selectedUser.taiKhoan;
+         document.getElementById("UserID").value = selectedUser.id;
+         document.getElementById("HoTen").value = selectedUser.hoTen;
+         document.getElementById("MatKhau").value = selectedUser.matKhau;
+         document.getElementById("Email").value = selectedUser.email;
+         document.getElementById("HinhAnh").value = selectedUser.hinhAnh;
+         document.getElementById("loaiNguoiDung").value = selectedUser.loaiND;
+         document.getElementById("loaiNgonNgu").value = selectedUser.ngonNgu;
+         document.getElementById("MoTa").value = selectedUser.moTa;
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+}
+
+// Hàm xóa user
+function deleteUserWithID(userID) {
+   apiDeleteUser(userID)
+      .then(() => {
+         main();
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+}
+
+//============================================
+// Lắng nghe sự kiện click trong modal-footer (Thêm/Cập nhật)
 document.querySelector(".modal-footer").addEventListener("click", (event) => {
    const type = event.target.getAttribute("data-type");
 
@@ -82,9 +137,10 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
    const loaiND = document.getElementById("loaiNguoiDung").value;
    const ngonNgu = document.getElementById("loaiNgonNgu").value;
    const moTa = document.getElementById("MoTa").value;
+   const id = document.getElementById("UserID").value;
 
    const user = new User(
-      null,
+      id,
       taiKhoan,
       hoTen,
       matKhau,
@@ -101,17 +157,27 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
          break;
       }
 
-			case "update": {
-				updateUserAPI(userID);
-				break;
-			}
+      case "update": {
+         updateUser(user);
+         break;
+      }
    }
 });
-
 
 //hàm add user vào API
 function addUser(user) {
    apiAddUser(user)
+      .then(() => {
+         main();
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+}
+
+// hàm update user lên API
+function updateUser(user) {
+   apiUpdateUser(user)
       .then(() => {
          main();
       })

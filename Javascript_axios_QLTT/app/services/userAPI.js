@@ -18,7 +18,26 @@ function apiAddUser(user) {
 }
 
 //hàm call API xóa người dùng
+function apiDeleteUser(userID) {
+   return axios({
+      url: `${baseURL}/${userID}`,
+      method: "DELETE",
+   });
+}
 
-//hàm call API lấy thông tin chi tiết người dùng
+//hàm call API lấy thông tin chi tiết 1 người dùng với ID
+function apiGetUser(userID) {
+   return axios({
+      url: `${baseURL}/${userID}`,
+      method: "GET",
+   });
+}
 
 //hàm call API cập nhật người dùng
+function apiUpdateUser(user) {
+   return axios({
+      url: `${baseURL}/${user.id}`,
+      method: "PUT",
+      data: user,
+   })
+}
