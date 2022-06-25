@@ -1,3 +1,4 @@
+let usersArray = [];
 main();
 
 //hàm main tự động chạy để render ra giao diện data từ API
@@ -19,8 +20,11 @@ function main() {
                user.moTa,
                user.hinhAnh
             );
+
             return users;
          });
+
+         usersArray = users;
 
          //sau khi có danh sách users ta gọi hàm display()
          display(users);
@@ -99,6 +103,7 @@ function selectUserWithId(userID) {
          const selectedUser = result.data;
 
          document.getElementById("TaiKhoan").value = selectedUser.taiKhoan;
+         // document.getElementById("TaiKhoan").disabled = "true";
          document.getElementById("UserID").value = selectedUser.id;
          document.getElementById("HoTen").value = selectedUser.hoTen;
          document.getElementById("MatKhau").value = selectedUser.matKhau;
@@ -153,11 +158,20 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
 
    switch (type) {
       case "add": {
+         let isValid = validation();
+         if (!isValid) {
+            return;
+         }
+
          addUser(user);
          break;
       }
 
       case "update": {
+         // let isValid = validation();
+         // if (!isValid) {
+         //    return;
+         // }
          updateUser(user);
          break;
       }
@@ -169,6 +183,7 @@ function addUser(user) {
    apiAddUser(user)
       .then(() => {
          main();
+         resetForm();
       })
       .catch((error) => {
          console.log(error);
@@ -180,6 +195,7 @@ function updateUser(user) {
    apiUpdateUser(user)
       .then(() => {
          main();
+         resetForm();
       })
       .catch((error) => {
          console.log(error);
@@ -201,4 +217,135 @@ document.getElementById("basic-addon2").addEventListener("click", () => {
 });
 
 //==============================
+//hàm xử lý reset form và đóng modal
+function resetForm() {
+   document.getElementById("TaiKhoan").value = "";
+   document.getElementById("HoTen").value = "";
+   document.getElementById("MatKhau").value = "";
+   document.getElementById("Email").value = "";
+   document.getElementById("HinhAnh").value = "";
+   document.getElementById("loaiNguoiDung").value = "";
+   document.getElementById("loaiNgonNgu").value = "";
+   document.getElementById("MoTa").value = "";
+   document.getElementById("UserID").value = "";
+
+   //đóng modal (vì sử dụng bootstrap nên phải tuân theo cách làm của nó)
+   $("#myModal").modal("hide");
+}
+//==========================
 //validation
+function validation() {
+   const taiKhoan = document.getElementById("TaiKhoan").value;
+   const hoTen = document.getElementById("HoTen").value;
+   const matKhau = document.getElementById("MatKhau").value;
+   const email = document.getElementById("Email").value;
+   const hinhAnh = document.getElementById("HinhAnh").value;
+   const loaiND = document.getElementById("loaiNguoiDung").value;
+   const ngonNgu = document.getElementById("loaiNgonNgu").value;
+   const moTa = document.getElementById("MoTa").value;
+
+   let tbTaiKhoan = document.getElementById("tbTaiKhoan");
+   let tbHoTen = document.getElementById("tbHoTen");
+   let tbMatKhau = document.getElementById("tbMatKhau");
+   let tbEmail = document.getElementById("tbEmail");
+   let tbHinhAnh = document.getElementById("tbHinhAnh");
+   let tbLoaiND = document.getElementById("tbLoaiNguoiDung");
+   let tbNgonNgu = document.getElementById("tbLoaiNgonNgu");
+   let tbMoTa = document.getElementById("tbMoTa");
+
+   let isValid = true;
+
+   // Kiểm tra tài khoản để trống hoặc trùng
+   if (taiKhoan === "") {
+      isValid = false;
+      tbTaiKhoan.innerHTML = `Tên tài khoản không được để trống`;
+   } else {
+      const index = usersArray.findIndex((user) => {
+         return user.taiKhoan === taiKhoan;
+      });
+
+      if (index !== -1) {
+         isValid = false;
+         tbTaiKhoan.innerHTML = `Tên tài khoản đã bị trùng !!!`;
+      } else {
+         tbTaiKhoan.innerHTML = "";
+      }
+   }
+
+   //Kiểm tra họ tên ko để trống, ko chứa số và kí tự đặc biệt
+   const lettersFullName = /^[a-zA-Z\s]*$/g;
+   if (hoTen === "") {
+      isValid = false;
+      tbHoTen.innerHTML = `Họ và tên không được để trống`;
+   } else if (!lettersFullName.test(hoTen)) {
+      isValid = false;
+      tbHoTen.innerHTML = `Họ và tên không chứa số và ký tự đặc biệt`;
+   } else {
+      tbHoTen.innerHTML = "";
+   }
+
+   // Kiểm tra mật khẩu ko để trống, đúng format có 1 kí tự hoa, 1 kí tự đặc biệt, 1 số, độ dài 6-8 kí tự
+   const lettersPassword = new RegExp(
+      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,8}$"
+   );
+   if (matKhau === "") {
+      isValid = false;
+      tbMatKhau.innerHTML = `Mật khẩu không được để trống`;
+   } else if (!lettersPassword.test(matKhau)) {
+      isValid = false;
+      tbMatKhau.innerHTML = `Mật khẩu không được để trống, đúng format (có ít nhất 1 ký tự hoa, 1 ký tự đặc biệt, 1 ký tự 
+         số, độ dài 6-8)
+         `;
+   } else {
+      tbMatKhau.innerHTML = "";
+   }
+
+   //Kiểm tra email ko để trống và đúng format
+   const lettersEmail = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
+   if (email === "") {
+      isValid = false;
+      tbEmail.innerHTML = `Email không được để trống`;
+   } else if (!lettersEmail.test(email)) {
+      isValid = false;
+      tbEmail.innerHTML = `Vui lòng nhập đúng format Email`;
+   } else {
+      tbEmail.innerHTML = "";
+   }
+
+   //Kiểm tra hình ảnh ko đc để trống
+   if (hinhAnh === "") {
+      isValid = false;
+      tbHinhAnh.innerHTML = `Url hình ảnh không được để trống.`
+   } else {
+      tbHinhAnh.innerHTML= ""
+   }
+
+   //Kiểm tra loại người dùng có được chọn không
+   if (loaiND !== "GV" && "HV") {
+      isValid = false;
+      tbLoaiND.innerHTML = `Vui lòng chọn loại người dùng.`
+   } else {
+      tbLoaiND.innerHTML = ""
+   }
+
+   //Kiểm tra loại ngôn ngữ có được chọn không
+   if (ngonNgu === "Chọn ngôn ngữ") {
+      isValid = false;
+      tbNgonNgu.innerHTML = `Vui lòng chọn loại ngôn ngữ.`
+   } else {
+      tbNgonNgu.innerHTML = ""
+   }
+
+   //Kiểm tra mô tả không đc để trống, không vượt quá 60 kí tự
+   if(moTa === "") {
+      isValid = false;
+      tbMoTa.innerHTML = `Vui lòng không bỏ trống mô tả.`
+   } else if (moTa.length > 60) {
+      isValid = false;
+      tbMoTa.innerHTML = `Mô tả không được vượt quá 60 kí tự.`
+   } else {
+      tbMoTa.innerHTML = ""
+   }
+
+   return isValid;
+}
