@@ -185,3 +185,20 @@ function updateUser(user) {
          console.log(error);
       });
 }
+
+//==============================
+// Lắng nghe sự kiện 'click' của người dùng vào nút search
+document.getElementById("basic-addon2").addEventListener("click", () => {
+   const userSearch = document.getElementById("txtSearch").value;
+   apiGetUsers(userSearch)
+      .then((result) => {
+         const userSearch = result.data;
+         display(userSearch);
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+});
+
+//==============================
+//validation
