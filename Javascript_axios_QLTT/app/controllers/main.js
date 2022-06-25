@@ -24,6 +24,7 @@ function main() {
             return users;
          });
 
+         //biến global usersArray để kiểm tra validation bị trùng tên tài khoàn hay không
          usersArray = users;
 
          //sau khi có danh sách users ta gọi hàm display()
@@ -98,12 +99,21 @@ function selectUserWithId(userID) {
    <button class="btn btn-warning" data-dismiss="modal">Đóng</button>
 `;
 
+ document.getElementById("tbTaiKhoan").innerHTML = "";
+ document.getElementById("tbHoTen").innerHTML = "";
+ document.getElementById("tbMatKhau").innerHTML = "";
+ document.getElementById("tbEmail").innerHTML = "";
+ document.getElementById("tbHinhAnh").innerHTML = "";
+ document.getElementById("tbLoaiNguoiDung").innerHTML = "";
+ document.getElementById("tbLoaiNgonNgu").innerHTML = "";
+ document.getElementById("tbMoTa").innerHTML = "";
+
    apiGetUser(userID)
       .then((result) => {
          const selectedUser = result.data;
 
          document.getElementById("TaiKhoan").value = selectedUser.taiKhoan;
-         // document.getElementById("TaiKhoan").disabled = "true";
+         document.getElementById("TaiKhoan").disabled = "true";
          document.getElementById("UserID").value = selectedUser.id;
          document.getElementById("HoTen").value = selectedUser.hoTen;
          document.getElementById("MatKhau").value = selectedUser.matKhau;
@@ -168,10 +178,10 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
       }
 
       case "update": {
-         // let isValid = validation();
-         // if (!isValid) {
-         //    return;
-         // }
+         let isValid = validation();
+         if (!isValid) {
+            return;
+         }
          updateUser(user);
          break;
       }
@@ -220,6 +230,7 @@ document.getElementById("basic-addon2").addEventListener("click", () => {
 //hàm xử lý reset form và đóng modal
 function resetForm() {
    document.getElementById("TaiKhoan").value = "";
+   document.getElementById("TaiKhoan").disabled = "false";
    document.getElementById("HoTen").value = "";
    document.getElementById("MatKhau").value = "";
    document.getElementById("Email").value = "";
@@ -255,20 +266,26 @@ function validation() {
 
    let isValid = true;
 
-   // Kiểm tra tài khoản để trống hoặc trùng
-   if (taiKhoan === "") {
-      isValid = false;
-      tbTaiKhoan.innerHTML = `Tên tài khoản không được để trống`;
-   } else {
-      const index = usersArray.findIndex((user) => {
-         return user.taiKhoan === taiKhoan;
-      });
+   // Kiểm tra tài khoản trùng chỉ chạy ở chức năng ADD USER
+   const isDisabled = document.getElementById("TaiKhoan").disabled;
 
-      if (index !== -1) {
+   // Nếu isDisabled = false (có nghĩa là người dùng đang chọn chức năng addUser) thì mới chạy kiểm tra trùng tài khoản hay không.
+   if (!isDisabled) {
+      // Kiểm tra tài khoản để trống hoặc trùng
+      if (taiKhoan === "") {
          isValid = false;
-         tbTaiKhoan.innerHTML = `Tên tài khoản đã bị trùng !!!`;
+         tbTaiKhoan.innerHTML = `Tên tài khoản không được để trống`;
       } else {
-         tbTaiKhoan.innerHTML = "";
+         const index = usersArray.findIndex((user) => {
+            return user.taiKhoan === taiKhoan;
+         });
+
+         if (index !== -1) {
+            isValid = false;
+            tbTaiKhoan.innerHTML = `Tên tài khoản đã bị trùng !!!`;
+         } else {
+            tbTaiKhoan.innerHTML = "";
+         }
       }
    }
 
@@ -315,36 +332,36 @@ function validation() {
    //Kiểm tra hình ảnh ko đc để trống
    if (hinhAnh === "") {
       isValid = false;
-      tbHinhAnh.innerHTML = `Url hình ảnh không được để trống.`
+      tbHinhAnh.innerHTML = `Url hình ảnh không được để trống.`;
    } else {
-      tbHinhAnh.innerHTML= ""
+      tbHinhAnh.innerHTML = "";
    }
 
    //Kiểm tra loại người dùng có được chọn không
    if (loaiND !== "GV" && "HV") {
       isValid = false;
-      tbLoaiND.innerHTML = `Vui lòng chọn loại người dùng.`
+      tbLoaiND.innerHTML = `Vui lòng chọn loại người dùng.`;
    } else {
-      tbLoaiND.innerHTML = ""
+      tbLoaiND.innerHTML = "";
    }
 
    //Kiểm tra loại ngôn ngữ có được chọn không
    if (ngonNgu === "Chọn ngôn ngữ") {
       isValid = false;
-      tbNgonNgu.innerHTML = `Vui lòng chọn loại ngôn ngữ.`
+      tbNgonNgu.innerHTML = `Vui lòng chọn loại ngôn ngữ.`;
    } else {
-      tbNgonNgu.innerHTML = ""
+      tbNgonNgu.innerHTML = "";
    }
 
    //Kiểm tra mô tả không đc để trống, không vượt quá 60 kí tự
-   if(moTa === "") {
+   if (moTa === "") {
       isValid = false;
-      tbMoTa.innerHTML = `Vui lòng không bỏ trống mô tả.`
+      tbMoTa.innerHTML = `Vui lòng không bỏ trống mô tả.`;
    } else if (moTa.length > 60) {
       isValid = false;
-      tbMoTa.innerHTML = `Mô tả không được vượt quá 60 kí tự.`
+      tbMoTa.innerHTML = `Mô tả không được vượt quá 60 kí tự.`;
    } else {
-      tbMoTa.innerHTML = ""
+      tbMoTa.innerHTML = "";
    }
 
    return isValid;
