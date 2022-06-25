@@ -64,15 +64,15 @@ function display(users) {
 }
 
 // lắng nghe sự kiện click ở nút Thêm mới
-document
-   .getElementById("btnThemNguoiDung")
-   .addEventListener("click", (event) => {
-      document.querySelector(".modal-title").innerHTML = "THÊM NGƯỜI DÙNG";
-      document.querySelector(".modal-footer").innerHTML = `
+document.getElementById("btnThemNguoiDung").addEventListener("click", () => {
+   document.querySelector(".modal-title").innerHTML = "THÊM NGƯỜI DÙNG";
+   document.querySelector(".modal-footer").innerHTML = `
 		<button class="btn btn-success" data-type='add'>Thêm</button>
 		<button class="btn btn-warning" data-dismiss="modal">Đóng</button>
 	`;
-   });
+
+   resetForm();
+});
 
 // lắng nghe sự kiện ở nút DanhSachNguoiDung/Cập Nhật
 document
@@ -99,21 +99,14 @@ function selectUserWithId(userID) {
    <button class="btn btn-warning" data-dismiss="modal">Đóng</button>
 `;
 
- document.getElementById("tbTaiKhoan").innerHTML = "";
- document.getElementById("tbHoTen").innerHTML = "";
- document.getElementById("tbMatKhau").innerHTML = "";
- document.getElementById("tbEmail").innerHTML = "";
- document.getElementById("tbHinhAnh").innerHTML = "";
- document.getElementById("tbLoaiNguoiDung").innerHTML = "";
- document.getElementById("tbLoaiNgonNgu").innerHTML = "";
- document.getElementById("tbMoTa").innerHTML = "";
+   resetForm();
 
    apiGetUser(userID)
       .then((result) => {
          const selectedUser = result.data;
 
          document.getElementById("TaiKhoan").value = selectedUser.taiKhoan;
-         document.getElementById("TaiKhoan").disabled = "true";
+         document.getElementById("TaiKhoan").disabled = true;
          document.getElementById("UserID").value = selectedUser.id;
          document.getElementById("HoTen").value = selectedUser.hoTen;
          document.getElementById("MatKhau").value = selectedUser.matKhau;
@@ -172,7 +165,6 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
          if (!isValid) {
             return;
          }
-
          addUser(user);
          break;
       }
@@ -183,6 +175,8 @@ document.querySelector(".modal-footer").addEventListener("click", (event) => {
             return;
          }
          updateUser(user);
+         document.getElementById("TaiKhoan").disabled = false;
+         console.log('12343432');
          break;
       }
    }
@@ -230,7 +224,6 @@ document.getElementById("basic-addon2").addEventListener("click", () => {
 //hàm xử lý reset form và đóng modal
 function resetForm() {
    document.getElementById("TaiKhoan").value = "";
-   document.getElementById("TaiKhoan").disabled = "false";
    document.getElementById("HoTen").value = "";
    document.getElementById("MatKhau").value = "";
    document.getElementById("Email").value = "";
@@ -239,6 +232,15 @@ function resetForm() {
    document.getElementById("loaiNgonNgu").value = "";
    document.getElementById("MoTa").value = "";
    document.getElementById("UserID").value = "";
+
+   document.getElementById("tbTaiKhoan").innerHTML = "";
+   document.getElementById("tbHoTen").innerHTML = "";
+   document.getElementById("tbMatKhau").innerHTML = "";
+   document.getElementById("tbEmail").innerHTML = "";
+   document.getElementById("tbHinhAnh").innerHTML = "";
+   document.getElementById("tbLoaiNguoiDung").innerHTML = "";
+   document.getElementById("tbLoaiNgonNgu").innerHTML = "";
+   document.getElementById("tbMoTa").innerHTML = "";
 
    //đóng modal (vì sử dụng bootstrap nên phải tuân theo cách làm của nó)
    $("#myModal").modal("hide");
